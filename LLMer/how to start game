@@ -1,0 +1,3 @@
+(musze być w folderze LLMer)
+cd LLMer
+npm run dev
