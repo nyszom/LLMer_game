@@ -1,4 +1,10 @@
-export type { ComponentDefinition } from './ComponentDefinition';
+export type {
+  ComponentDefinition,
+  KnownComponentDefinition,
+  PhysicsBodyComponentDefinition,
+  TransformComponentDefinition,
+  VisualComponentDefinition,
+} from './ComponentDefinition';
 export type { EntityDefinition, EntityDefinitionSource } from './EntityDefinition';
 export type {
   CollisionArea,
