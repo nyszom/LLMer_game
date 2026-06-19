@@ -1,9 +1,11 @@
 import type Phaser from 'phaser';
 import type { GameState } from '../types';
+import type { GameStateStore } from './GameStateStore';
 
 export interface GameContext {
   scene: Phaser.Scene;
   gameState: GameState;
+  stateStore: GameStateStore;
 
   // TODO: Add runtime entity manager when entity runtime is introduced.
   entityManager?: unknown;
