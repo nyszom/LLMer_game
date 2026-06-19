@@ -1,7 +1,4 @@
-// TODO: Replace this local interface with an imported RuntimeComponent type when it is added.
-export interface RuntimeComponent {
-  readonly kind: string;
-}
+import type { RuntimeComponent } from '../components';
 
 export class GameEntity {
   public readonly id: string;
