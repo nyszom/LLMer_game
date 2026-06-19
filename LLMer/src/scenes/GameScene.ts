@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { ASSET_CATALOG, getAsset } from '../catalog/AssetCatalog';
 
 export class GameScene extends Phaser.Scene {
   private player!: Phaser.Physics.Arcade.Sprite;
@@ -16,15 +17,11 @@ export class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image(
-      'map_tmp_1',
-      'assets/maps/map_tmp_1.png'
-    );
-
-    this.load.image(
-      'szarak_1',
-      'assets/characters/szarak_1.png'
-    );
+    ASSET_CATALOG.forEach((asset) => {
+      if (asset.type === 'image') {
+        this.load.image(asset.id, asset.path);
+      }
+    });
   }
 
   create() {
@@ -44,7 +41,7 @@ export class GameScene extends Phaser.Scene {
       'szarak_1'
     );
 
-    this.player.setScale(0.5);
+    this.player.setScale(getAsset('szarak_1').defaultScale);
     this.player.setCollideWorldBounds(true);
 
     this.cameras.main.setBounds(
